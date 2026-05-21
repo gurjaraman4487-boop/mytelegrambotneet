@@ -7,7 +7,6 @@ from telegram import (
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
-    CallbackQueryHandler,
     ContextTypes
 )
 
@@ -21,7 +20,23 @@ TOKEN = "8070825229:AAF3u9E-5aOhlrfxGNae8dQPFCUD4bK52oI"
 # START IMAGE
 # =========================
 
-START_IMAGE = "https://i.postimg.cc/RZYQtWzp/IMG-20260522-015805-713.jpg"
+START_IMAGE = "https://i.postimg.cc/g0kV13q7/330px-Flag-of-India-svg.png"
+
+# =========================
+# QR IMAGE LINK
+# =========================
+
+QR_IMAGE = "https://i.postimg.cc/43dcWsXK/Screenshot-20260522-022954.png"
+
+# =========================
+# LINKS
+# =========================
+
+MAIN_CHANNEL = "https://t.me/re_neet_2026"
+
+PROOF_LINK = "https://t.me/reneetproofs"
+
+ADMIN_LINK = "https://t.me/dealer_x"
 
 # =========================
 # START COMMAND
@@ -33,29 +48,29 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         [
             InlineKeyboardButton(
-                "🔥 OPTION 1",
-                callback_data="op1"
+                "🤗 Join Main Channel",
+                url=MAIN_CHANNEL
             )
         ],
 
         [
             InlineKeyboardButton(
-                "💎 OPTION 2",
-                callback_data="op2"
+                "🧾 Click Here Chl Proof",
+                url=PROOF_LINK
             )
         ],
 
         [
             InlineKeyboardButton(
-                "🎬 OPTION 3",
-                callback_data="op3"
+                "💸 Get QR",
+                url=QR_IMAGE
             )
         ],
 
         [
             InlineKeyboardButton(
-                "👑 OPTION 4",
-                callback_data="op4"
+                "👑 Admin",
+                url=ADMIN_LINK
             )
         ]
     ]
@@ -70,34 +85,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 # =========================
-# BUTTON HANDLER
-# =========================
-
-async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
-    query = update.callback_query
-
-    await query.answer()
-
-    data = query.data
-
-    if data == "op1":
-
-        await query.message.reply_text("🔥 OPTION 1 CLICKED")
-
-    elif data == "op2":
-
-        await query.message.reply_text("💎 OPTION 2 CLICKED")
-
-    elif data == "op3":
-
-        await query.message.reply_text("🎬 OPTION 3 CLICKED")
-
-    elif data == "op4":
-
-        await query.message.reply_text("👑 OPTION 4 CLICKED")
-
-# =========================
 # RUN BOT
 # =========================
 
@@ -105,10 +92,6 @@ app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(
     CommandHandler("start", start)
-)
-
-app.add_handler(
-    CallbackQueryHandler(button_handler)
 )
 
 print("✅ BOT RUNNING...")
