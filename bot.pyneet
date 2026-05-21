@@ -15,13 +15,13 @@ from telegram.ext import (
 # BOT TOKEN
 # =========================
 
-TOKEN = "YOUR_BOT_TOKEN"
+TOKEN = "8070825229:AAF3u9E-5aOhlrfxGNae8dQPFCUD4bK52oI"
 
 # =========================
 # START IMAGE
 # =========================
 
-START_IMAGE = "https://your-image-link.jpg"
+START_IMAGE = "https://i.postimg.cc/RZYQtWzp/IMG-20260522-015805-713.jpg"
 
 # =========================
 # START COMMAND
