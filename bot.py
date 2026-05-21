@@ -55,7 +55,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         [
             InlineKeyboardButton(
-                "🧾 Click Here Chl Proof",
+                "🧾 Click Here Chk Proof",
                 url=PROOF_LINK
             )
         ],
